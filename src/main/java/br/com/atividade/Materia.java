@@ -2,7 +2,7 @@ package br.com.atividade;
 
 public class Materia {
 
-	String nome;
+	private String nome;
 
 	public Materia() {
 	}

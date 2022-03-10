@@ -2,8 +2,8 @@ package br.com.atividade;
 
 public class Aluno {
 
-	String nome;
-	String turma;
+	private String nome;
+	private String turma;
 	
 	public Aluno() {
 	}

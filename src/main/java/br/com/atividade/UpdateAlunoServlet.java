@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class CadastrarAlunoServlet extends HttpServlet {
-	
+public class UpdateAlunoServlet extends HttpServlet {
+
 	private AlunoService alunoService = new AlunoService();
 	
 	public void doPost(
@@ -17,14 +17,14 @@ public class CadastrarAlunoServlet extends HttpServlet {
 			HttpServletResponse httpServletResponse) 
 	throws IOException {
 		
+		int id = Integer.valueOf(httpServletRequest.getParameter("id"));
+	
 		Aluno aluno = new Aluno();
 		
 		aluno.setNome(httpServletRequest.getParameter("nome"));
 		aluno.setTurma(httpServletRequest.getParameter("turma"));
 		
-		System.out.println("Aluno: " + aluno.getNome() + " Turma:" + aluno.getTurma());
-		
-		alunoService.insertAluno(aluno);
+		alunoService.updateAluno(id, aluno);
 		
 		httpServletResponse.setContentType("text/html");
 		PrintWriter printWriter = httpServletResponse.getWriter();
@@ -55,5 +55,5 @@ public class CadastrarAlunoServlet extends HttpServlet {
        printWriter.print("</table></body></html>");
 		
 	}
-
+	
 }

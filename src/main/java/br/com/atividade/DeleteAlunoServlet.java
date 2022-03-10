@@ -8,23 +8,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class CadastrarAlunoServlet extends HttpServlet {
-	
-	private AlunoService alunoService = new AlunoService();
+public class DeleteAlunoServlet extends HttpServlet {
+
+private AlunoService alunoService = new AlunoService();
 	
 	public void doPost(
 			HttpServletRequest httpServletRequest, 
 			HttpServletResponse httpServletResponse) 
 	throws IOException {
 		
-		Aluno aluno = new Aluno();
-		
-		aluno.setNome(httpServletRequest.getParameter("nome"));
-		aluno.setTurma(httpServletRequest.getParameter("turma"));
-		
-		System.out.println("Aluno: " + aluno.getNome() + " Turma:" + aluno.getTurma());
-		
-		alunoService.insertAluno(aluno);
+		int id = Integer.valueOf(httpServletRequest.getParameter("id"));
+	
+		alunoService.deleteAluno(id);
 		
 		httpServletResponse.setContentType("text/html");
 		PrintWriter printWriter = httpServletResponse.getWriter();
@@ -38,22 +33,22 @@ public class CadastrarAlunoServlet extends HttpServlet {
         
         printWriter.print("<table border='1' width='100%'>");
         printWriter.print("<tr><th>Nome</th><th>Turma</th><th>Opções</th></tr>");  
-       for(Aluno a:listAlunos){  
-    	   printWriter.print("<tr><td>"+ a.getNome() + "</td>"
-    	   		+ "<td>" + a.getTurma() + "</td>"
-    	   				+ "<td><div class='options'>"
-    	   				+ "<form action='editarAluno' method='post'>"
-    	   					+ "<input type='hidden' name='id' value='"+listAlunos.indexOf(a)+"'>"
-    	   					+ "<button type='submit'>editar</button>"
-    	   				+ "</form>"
-    	   				+ "<form action='apagarAluno' method='post'>"
-    	   					+ "<input type='hidden' name='id' value='"+listAlunos.indexOf(a)+"'>"
-   							+ "<button type='submit'>apagar</button>"
-    	   				+ "</form>"
-    	   				+ "</div></td></tr>");
+        for(Aluno a:listAlunos){  
+		   printWriter.print("<tr><td>"+ a.getNome() + "</td>"
+			   	+ "<td>" + a.getTurma() + "</td>"
+				+ "<td><div class='options'>"
+				+ "<form action='editarAluno' method='post'>"
+					+ "<input type='hidden' name='id' value='"+listAlunos.indexOf(a)+"'>"
+					+ "<button type='submit'>editar</button>"
+				+ "</form>"
+				+ "<form action='apagarAluno' method='post'>"
+					+ "<input type='hidden' name='id' value='"+listAlunos.indexOf(a)+"'>"
+					+ "<button type='submit'>apagar</button>"
+				+ "</form>"
+				+ "</div></td></tr>");
        }
        printWriter.print("</table></body></html>");
 		
 	}
-
+	
 }

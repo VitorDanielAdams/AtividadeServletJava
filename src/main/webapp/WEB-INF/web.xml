@@ -22,6 +22,36 @@
   	<url-pattern>/cadastrarMateria</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>editarAluno</servlet-name>
+  	<servlet-class>br.com.atividade.EditarAlunoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>editarAluno</servlet-name>
+  	<url-pattern>/editarAluno</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>updateAluno</servlet-name>
+  	<servlet-class>br.com.atividade.UpdateAlunoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>updateAluno</servlet-name>
+  	<url-pattern>/updateAluno</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>apagarAluno</servlet-name>
+  	<servlet-class>br.com.atividade.DeleteAlunoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>apagarAluno</servlet-name>
+  	<url-pattern>/apagarAluno</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>

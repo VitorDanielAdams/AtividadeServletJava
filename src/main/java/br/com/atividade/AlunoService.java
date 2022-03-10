@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AlunoService {
 
-	private List<Aluno> listaAlunos = new ArrayList<>();
+	private static List<Aluno> listaAlunos = new ArrayList<>();
 	
 	public AlunoService() {
 	}
@@ -16,6 +16,18 @@ public class AlunoService {
 	
 	public List<Aluno> findAllAlunos(){
 		return this.listaAlunos;
+	}
+	
+	public Aluno findByIdAluno(Integer id) {
+		return this.listaAlunos.get(id);
+	}
+	
+	public void updateAluno(int id, Aluno aluno) {
+		this.listaAlunos.set(id, aluno);
+	}
+	
+	public void deleteAluno(int id) {
+		this.listaAlunos.remove(id);
 	}
 	
 }
