@@ -3,16 +3,6 @@
   <display-name>AtividadeAlunoMateria</display-name>
   
   <servlet>
-  	<servlet-name>cadastrarAluno</servlet-name>
-  	<servlet-class>br.com.atividade.CadastrarAlunoServlet</servlet-class>
-  </servlet>
-    
-  <servlet-mapping>
-  	<servlet-name>cadastrarAluno</servlet-name>
-  	<url-pattern>/cadastrarAluno</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
   	<servlet-name>cadastrarMateria</servlet-name>
   	<servlet-class>br.com.atividade.CadastrarMateriaServlet</servlet-class>
   </servlet>
@@ -23,6 +13,26 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name>cadastrarAluno</servlet-name>
+  	<servlet-class>br.com.atividade.CadastrarAlunoServlet</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+  	<servlet-name>cadastrarAluno</servlet-name>
+  	<url-pattern>/cadastrarAluno</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>listarAluno</servlet-name>
+  	<servlet-class>br.com.atividade.ListarAlunoServlet</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+  	<servlet-name>listarAluno</servlet-name>
+  	<url-pattern>/listarAluno</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   	<servlet-name>editarAluno</servlet-name>
   	<servlet-class>br.com.atividade.EditarAlunoServlet</servlet-class>
   </servlet>
@@ -30,16 +40,6 @@
   <servlet-mapping>
   	<servlet-name>editarAluno</servlet-name>
   	<url-pattern>/editarAluno</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>updateAluno</servlet-name>
-  	<servlet-class>br.com.atividade.UpdateAlunoServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>updateAluno</servlet-name>
-  	<url-pattern>/updateAluno</url-pattern>
   </servlet-mapping>
   
   <servlet>

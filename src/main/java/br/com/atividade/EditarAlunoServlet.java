@@ -24,14 +24,14 @@ public class EditarAlunoServlet extends HttpServlet {
 		PrintWriter printWriter = httpServletResponse.getWriter();
 		printWriter.println("<html><head><link href=\"index.css\" rel=\"stylesheet\"></head>");
 		printWriter.println("<body><div class='link'>"
-				+ "<a href='index.html'>Voltar ao Menu</a>"
+				+ "<a href='menu.html'>Voltar ao Menu</a>"
 				+ "</div>");
 		printWriter.println(""
 				+ "<div class=\"container\">\r\n"
-				+ "	<form action=\"updateAluno\" method=\"post\">"
+				+ "	<form action=\"cadastrarAluno\" method=\"post\">"
 				+ "		<div class=\"box\">\r\n"
 				+ "			<div class=\"title\">\r\n"
-				+ "		    	<h1>Cadastro de Alunos</h1>\r\n"
+				+ "		    	<h1>Editar Aluno</h1>\r\n"
 				+ "		    </div>\r\n"
 				+ "		    <div class=\"input\">\r\n"
 				+ "		        <label>Nome Aluno</label>\r\n"
@@ -42,7 +42,7 @@ public class EditarAlunoServlet extends HttpServlet {
 				+ "		        <input type=\"text\" name=\"turma\" value='"+aluno.getTurma()+"'>\r\n"
 				+ "		    </div>\r\n"
 				+ "         <input type='hidden' name='id' value='"+id+"'>"
-				+ "		    <input type=\"submit\" class=\"button\">\r\n"
+				+ "		    <input type=\"submit\" class=\"button\" value='editar'>\r\n"
 				+ "	    </div>\r\n"
 				+ "	</form>\r\n"
 				+ "</div>");

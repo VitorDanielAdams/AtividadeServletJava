@@ -8,23 +8,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class UpdateAlunoServlet extends HttpServlet {
+public class ListarAlunoServlet extends HttpServlet {
 
 	private AlunoService alunoService = new AlunoService();
 	
-	public void doPost(
+	public void doGet(
 			HttpServletRequest httpServletRequest, 
 			HttpServletResponse httpServletResponse) 
 	throws IOException {
-		
-		int id = Integer.valueOf(httpServletRequest.getParameter("id"));
-	
-		Aluno aluno = new Aluno();
-		
-		aluno.setNome(httpServletRequest.getParameter("nome"));
-		aluno.setTurma(httpServletRequest.getParameter("turma"));
-		
-		alunoService.updateAluno(id, aluno);
 		
 		httpServletResponse.setContentType("text/html");
 		PrintWriter printWriter = httpServletResponse.getWriter();
@@ -53,6 +44,7 @@ public class UpdateAlunoServlet extends HttpServlet {
     	   				+ "</div></td></tr>");
        }
        printWriter.print("</table></body></html>");
+
 		
 	}
 	
