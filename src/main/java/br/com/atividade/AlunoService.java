@@ -30,4 +30,13 @@ public class AlunoService {
 		this.listaAlunos.remove(id);
 	}
 	
+	public boolean validateCheck(String nome, String turma) {
+		
+		if(nome.isEmpty() == false && turma.isEmpty() == false) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 }

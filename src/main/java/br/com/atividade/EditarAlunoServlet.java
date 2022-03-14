@@ -28,24 +28,25 @@ public class EditarAlunoServlet extends HttpServlet {
 				+ "</div>");
 		printWriter.println(""
 				+ "<div class=\"container\">\r\n"
-				+ "	<form action=\"cadastrarAluno\" method=\"post\">"
+				+ "	<form action=\"cadastrarAluno\" method=\"post\" id='form'>"
 				+ "		<div class=\"box\">\r\n"
 				+ "			<div class=\"title\">\r\n"
 				+ "		    	<h1>Editar Aluno</h1>\r\n"
 				+ "		    </div>\r\n"
 				+ "		    <div class=\"input\">\r\n"
 				+ "		        <label>Nome Aluno</label>\r\n"
-				+ "		        <input type=\"text\" name=\"nome\" value='"+aluno.getNome()+"'>\r\n"
+				+ "		        <input type=\"text\" name=\"nome\" value='"+aluno.getNome()+"' id='nome'>\r\n"
 				+ "		    </div>\r\n"
 				+ "		    <div class=\"input\">\r\n"
 				+ "		    	<label>Turma</label>\r\n"
-				+ "		        <input type=\"text\" name=\"turma\" value='"+aluno.getTurma()+"'>\r\n"
+				+ "		        <input type=\"text\" name=\"turma\" value='"+aluno.getTurma()+"' id='turma'>\r\n"
 				+ "		    </div>\r\n"
 				+ "         <input type='hidden' name='id' value='"+id+"'>"
 				+ "		    <input type=\"submit\" class=\"button\" value='editar'>\r\n"
 				+ "	    </div>\r\n"
 				+ "	</form>\r\n"
 				+ "</div>");
+		printWriter.println("<script src=\"main.js\"></script>");
 		printWriter.print("</body></html>");
 		
 	}

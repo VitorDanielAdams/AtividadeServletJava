@@ -25,15 +25,24 @@ public class CadastrarAlunoServlet extends HttpServlet {
 			id = Integer.valueOf(httpServletRequest.getParameter("id"));
 		}
 		
-		aluno.setNome(httpServletRequest.getParameter("nome"));
-		aluno.setTurma(httpServletRequest.getParameter("turma"));
-		
-		System.out.println("Aluno: " + aluno.getNome() + " Turma:" + aluno.getTurma());
-		
-		if(id >= 0) {
-			alunoService.updateAluno(id, aluno);
+		if(alunoService.validateCheck(
+				httpServletRequest.getParameter("nome"), 
+				httpServletRequest.getParameter("turma"))
+				) {
+			aluno.setNome(httpServletRequest.getParameter("nome"));
+			aluno.setTurma(httpServletRequest.getParameter("turma"));
+			
+			System.out.println("Aluno: " + aluno.getNome() + " Turma:" + aluno.getTurma());
+			
+			if(id >= 0) {
+				alunoService.updateAluno(id, aluno);
+			} else {
+				alunoService.insertAluno(aluno);
+			}
 		} else {
-			alunoService.insertAluno(aluno);
+			
+			System.out.println("Inputs não preenchidos");
+			
 		}
 		
 		httpServletResponse.sendRedirect("listarAluno.html");		
