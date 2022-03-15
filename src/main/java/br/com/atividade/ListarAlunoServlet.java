@@ -29,7 +29,7 @@ public class ListarAlunoServlet extends HttpServlet {
         
         printWriter.print("<table border='1' width='100%'>");
         printWriter.print("<tr><th>Nome</th><th>Turma</th><th>Opções</th></tr>");  
-       for(Aluno a:listAlunos){  
+        for(Aluno a:listAlunos){  
     	   printWriter.print("<tr><td>"+ a.getNome() + "</td>"
     	   		+ "<td>" + a.getTurma() + "</td>"
     	   				+ "<td><div class='options'>"
@@ -42,8 +42,8 @@ public class ListarAlunoServlet extends HttpServlet {
    							+ "<button type='submit'>apagar</button>"
     	   				+ "</form>"
     	   				+ "</div></td></tr>");
-       }
-       printWriter.print("</table></body></html>");
+        }
+        printWriter.print("</table></body></html>");
 
 		
 	}
